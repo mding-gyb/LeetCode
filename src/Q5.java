@@ -54,7 +54,7 @@ public class Q5 {
 	}*/
 	
 	
-	// Dynamic Programming Approach
+	// Kind of Dynamic Programming Approach
 	
 	public static String longestPalindrome(String s) {
 		if(s.equals("")) {

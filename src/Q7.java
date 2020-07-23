@@ -8,4 +8,5 @@ public class Q7 {
         }
         return res < Integer.MIN_VALUE || res > Integer.MAX_VALUE ? 0 : (int)res;
     }
+	
 }

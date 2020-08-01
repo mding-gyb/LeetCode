@@ -32,6 +32,9 @@ public class Q10 {
 			s_previous = s_char;
 			p_previous = p_char;
 		}
-        return true;
+        return false;
+        
+        
+        
     }	
 }

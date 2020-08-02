@@ -1,12 +1,16 @@
 
 public class Q10 {
-	public boolean isMatch(String s, String p) {
+	public static void main(String[]args) {
+		System.out.println(isMatch("hello", "world"));
+	}
+	public static boolean isMatch(String s, String p) {
 		if (s.length() != p.length()) {
 			return false;
 		}
 		if (s.length() == 0) {
 			return true;
 		}
+		
 		int count = 1;
 		char s_previous = s.charAt(0);
 		char p_previous = p.charAt(0);
@@ -32,7 +36,7 @@ public class Q10 {
 			s_previous = s_char;
 			p_previous = p_char;
 		}
-        return false;
+        return true;
         
         
         

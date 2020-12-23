@@ -18,6 +18,5 @@ public class Q11 {
 			}
 		}
 		return max;
-		
 	}
 }

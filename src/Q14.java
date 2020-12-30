@@ -1,7 +1,7 @@
 
 public class Q14 {
 	public static void main(String[]args) {
-		String [] strs = new String ["flower","flow","flight"];
+		
 	}
 	public static String longestCommonPrefix(String[] strs) {
 		String out = "";

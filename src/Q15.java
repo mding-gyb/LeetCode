@@ -7,40 +7,32 @@ public class Q15 {
 	public static List<List<Integer>> threeSum(int[] nums) {
 		Arrays.sort(nums);
 		List<List<Integer>> out = new ArrayList<>();
+		Map<List<Integer>, Integer> map = new HashMap<>();
 		
 		for (int i = 0; i < nums.length-2; i++) {
-			for (int j = i+1; j < nums.length;j++) {
-				if (nums[i]+nums[j]<=0 && findThird(startingAt(nums, j+1), -1*(nums[i]+nums[j])) == true) {
-					List<Integer> temp = new ArrayList<>();
-					temp.add(nums[i]);
-					temp.add(nums[j]);
-					temp.add(-1*(nums[i]+nums[j]));
-					if (out.contains(temp) == false) {
-						out.add(new ArrayList());
-						out.get(out.size()-1).add(nums[i]);
-						out.get(out.size()-1).add(nums[j]);
-						out.get(out.size()-1).add(-1*(nums[i]+nums[j]));
+			int k = nums.length-1;
+			for (int j = i+1; j < k;j++) {
+				while (j < k) {
+					if (nums[i]+nums[j]+nums[k] == 0) {
+						if (!map.containsKey(Arrays.asList(nums[i], nums[j]))) {
+							map.put(Arrays.asList(nums[i], nums[j]), nums[k]);
+							out.add(new ArrayList());
+							out.get(out.size()-1).add(nums[i]);
+							out.get(out.size()-1).add(nums[j]);
+							out.get(out.size()-1).add(nums[k]);
+							j++;
+							k--;
+						} else {
+							j++;
+							k--;
+						}
+					} else if (nums[i]+nums[j]+nums[k] < 0) {
+						j++;
+					} else {
+						k--;
 					}
 				}
 			}
-			if(nums[i]>0) {
-				break;
-			}
-		}
-		return out;
-	}
-	public static boolean findThird(int[] nums, int wanted) {
-		for (int i = nums.length-1; i >= 0; i--) {
-			if (nums[i]==wanted) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public static int[] startingAt(int[]nums, int start) {
-		int out[] = new int [nums.length-start];
-		for(int i = start; i < nums.length; i++) {
-			out[i-start] = nums[i];
 		}
 		return out;
 	}

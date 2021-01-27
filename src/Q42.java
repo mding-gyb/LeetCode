@@ -7,6 +7,6 @@ public class Q42 {
 		if (index == heights.length-1) {
 			return volume;
 		}
-		
+		return 0;
 	}
 }
